@@ -292,27 +292,27 @@
         );
 
         const MenuItem = ({ id, name, ingredients, price, highlighted = false }) => (
-            <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center py-4 border-b border-gray-100 group hover:bg-gray-50 transition-colors px-2 rounded-lg ${highlighted ? 'bg-yellow-50' : ''}`}>
-                <div className="flex items-start gap-4 flex-1 pr-4">
+            <div className={`flex justify-between items-start py-3 sm:py-4 border-b border-gray-100 group hover:bg-gray-50 transition-colors px-1 sm:px-2 rounded-lg ${highlighted ? 'bg-yellow-50' : ''}`}>
+                <div className="flex items-start gap-2 sm:gap-4 flex-1 pr-2">
                     {id && (
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-karnak-red text-white flex items-center justify-center font-bold font-serif shadow-sm group-hover:scale-110 transition-transform">
+                        <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-karnak-red text-white flex items-center justify-center font-bold font-serif text-sm sm:text-base shadow-sm group-hover:scale-110 transition-transform mt-0.5">
                             {id}
                         </div>
                     )}
-                    <div>
-                        <h4 className="text-lg font-bold text-karnak-dark font-sans flex items-center gap-2">
+                    <div className="flex-1">
+                        <h4 className="text-base sm:text-lg font-bold text-karnak-dark font-sans flex flex-wrap items-center gap-2 leading-tight">
                             {name}
-                            {highlighted && <span className="text-xs bg-karnak-gold text-white px-2 py-0.5 rounded-full">Trovato</span>}
+                            {highlighted && <span className="text-[10px] sm:text-xs bg-karnak-gold text-white px-2 py-0.5 rounded-full">Trovato</span>}
                         </h4>
                         {ingredients && (
-                            <p className="text-sm text-gray-600 mt-1 font-sans italic leading-relaxed">
+                            <p className="text-xs sm:text-sm text-gray-600 mt-1 font-sans italic leading-relaxed">
                                 {ingredients}
                             </p>
                         )}
                     </div>
                 </div>
-                <div className="mt-2 sm:mt-0 flex-shrink-0">
-                    <span className="text-xl font-bold text-karnak-blue font-serif tracking-wide">{price}€</span>
+                <div className="flex-shrink-0 ml-2 mt-0.5">
+                    <span className="text-base sm:text-xl font-bold text-karnak-blue font-serif tracking-wide whitespace-nowrap">{price}€</span>
                 </div>
             </div>
         );
